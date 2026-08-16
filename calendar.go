@@ -28,7 +28,7 @@ func (c Calendar) WeekStart() time.Weekday {
 	return c.weekStart
 }
 
-func (c Calendar) UseWeekStart(weekStart time.Weekday) Calendar {
+func (c Calendar) WithWeekStart(weekStart time.Weekday) Calendar {
 	if weekStart < time.Sunday || weekStart > time.Saturday {
 		weekStart = time.Sunday
 	}
