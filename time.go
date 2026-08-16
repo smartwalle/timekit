@@ -1,4 +1,4 @@
-package timex
+package timekit
 
 import (
 	"database/sql/driver"
@@ -290,7 +290,7 @@ func (t Time[T]) Value() (driver.Value, error) {
 
 func (t *Time[T]) Scan(value interface{}) (err error) {
 	if t == nil {
-		return fmt.Errorf("timex: scan on nil Time")
+		return fmt.Errorf("timekit: scan on nil Time")
 	}
 	switch val := value.(type) {
 	case time.Time:
@@ -317,7 +317,7 @@ func (t *Time[T]) Scan(value interface{}) (err error) {
 		t.utc = time.Time{}
 		return nil
 	default:
-		return fmt.Errorf("timex: scanning unsupported type: %T", value)
+		return fmt.Errorf("timekit: scanning unsupported type: %T", value)
 	}
 }
 

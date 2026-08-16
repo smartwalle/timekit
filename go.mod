@@ -1,3 +1,3 @@
-module github.com/smartwalle/timex
+module github.com/smartwalle/timekit
 
 go 1.18
