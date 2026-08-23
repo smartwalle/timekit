@@ -17,7 +17,8 @@ func LoadLocation(name string) (*time.Location, error) {
 }
 
 // NewLocation 返回指定名称的时区。
-// 当运行环境存在 IANA 时区数据时，使用 name 指定的时区；否则回退到固定偏移时区。
+// 优先使用 IANA 时区数据，加载失败时使用给定的偏移量回退到固定偏移时区。
+// 固定偏移时区不支持夏令时。
 func NewLocation(name string, offset int) *time.Location {
 	loc, err := LoadLocation(name)
 	if err != nil {
