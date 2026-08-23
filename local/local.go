@@ -1,3 +1,4 @@
+// Package local 提供本地时区（time.Local）相关工具。
 package local
 
 import (

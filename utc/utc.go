@@ -1,3 +1,4 @@
+// Package utc 提供协调世界时（UTC）相关工具。
 package utc
 
 import (

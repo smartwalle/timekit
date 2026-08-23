@@ -9,22 +9,13 @@ import (
 	"github.com/smartwalle/timekit"
 )
 
-var location = loadLocation()
-
-func loadLocation() *time.Location {
-	loc, err := timekit.LoadLocation("Asia/Shanghai")
-	if err != nil {
-		loc = time.FixedZone("Asia/Shanghai", 8*60*60)
-	}
-	return loc
-}
+var location = timekit.NewLocation("Asia/Shanghai", 8*60*60)
 
 func Location() *time.Location {
 	return location
 }
 
-type Timezone struct {
-}
+type Timezone struct{}
 
 func (Timezone) Location() *time.Location {
 	return location
