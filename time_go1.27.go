@@ -2,6 +2,6 @@
 
 package timekit
 
-func (t Time[T]) As[U Timezone]() Time[U] {
+func (t Time[T]) As[U Timezone](_ U) Time[U] {
 	return Time[U]{utc: t.utc}
 }
